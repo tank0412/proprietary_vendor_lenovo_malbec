@@ -1473,3 +1473,13 @@ PRODUCT_PACKAGES += \
     vendor_lib64_libEGL_adreno_so \
     vendor_lib64_libGLESv2_adreno_so \
     vendor_lib64_libq3dtools_adreno_so
+
+# Dolby DAP blobs (restored for 4-speaker quad output)
+# Installed via cc_prebuilt_library_shared in Android.bp (PRODUCT_COPY_FILES
+# rejects ELF files since Android 15).
+PRODUCT_PACKAGES += \
+    libswdapaidl \
+    libdlbvolaidl \
+    libswgamedapaidl \
+    libquasar \
+    libdlbpreg

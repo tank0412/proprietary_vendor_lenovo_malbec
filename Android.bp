@@ -27003,3 +27003,87 @@ install_symlink {
     installed_location: "lib64/libq3dtools_adreno.so",
     symlink_target: "/vendor/lib64/egl/libq3dtools_adreno.so",
 }
+
+// ─── Dolby DAP blobs (restored from TB378FC for 4-speaker quad) ───
+// These were removed in session 19 along with libswdapaidl.so; restored
+// in this patch so libmalbec_dap_bridge.so (dlopen) works again.
+// Style follows libbundleaidl (soundfx) / libdmshal (lib64) above.
+
+cc_prebuilt_library_shared {
+    name: "libswdapaidl",
+    owner: "lenovo",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/soundfx/libswdapaidl.so"],
+        },
+    },
+    compile_multilib: "64",
+    check_elf_files: false,
+    relative_install_path: "soundfx",
+    prefer: true,
+    vendor: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libdlbvolaidl",
+    owner: "lenovo",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/soundfx/libdlbvolaidl.so"],
+        },
+    },
+    compile_multilib: "64",
+    check_elf_files: false,
+    relative_install_path: "soundfx",
+    prefer: true,
+    vendor: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libswgamedapaidl",
+    owner: "lenovo",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/soundfx/libswgamedapaidl.so"],
+        },
+    },
+    compile_multilib: "64",
+    check_elf_files: false,
+    relative_install_path: "soundfx",
+    prefer: true,
+    vendor: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libquasar",
+    owner: "lenovo",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/soundfx/libquasar.so"],
+        },
+    },
+    compile_multilib: "64",
+    check_elf_files: false,
+    relative_install_path: "soundfx",
+    prefer: true,
+    vendor: true,
+}
+
+cc_prebuilt_library_shared {
+    name: "libdlbpreg",
+    owner: "lenovo",
+    strip: { none: true },
+    target: {
+        android_arm64: {
+            srcs: ["proprietary/vendor/lib64/libdlbpreg.so"],
+        },
+    },
+    compile_multilib: "64",
+    check_elf_files: false,
+    prefer: true,
+    vendor: true,
+}

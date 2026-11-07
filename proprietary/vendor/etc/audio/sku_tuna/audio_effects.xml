@@ -75,6 +75,7 @@
         <library name="volume_listener" path="libvolumelistener.so"/>
         <library name="audiosphere" path="libasphere.so"/>
         <library name="quasar" path="libquasar.so"/>
+        <library name="dap" path="libmalbec_dap_bridge.so"/>
     </libraries>
     <effects>
         <effectProxy name="bassboost" library="proxy" uuid="14804144-a5ee-4d24-aa88-0002a5d5c51b">
@@ -127,6 +128,7 @@
     <postprocess>
         <stream type="music">
             <apply effect="music_helper"/>
+            <apply effect="dap"/>
         </stream>
         <stream type="ring">
             <apply effect="ring_helper"/>
