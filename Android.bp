@@ -8735,6 +8735,7 @@ cc_prebuilt_library_shared {
     soc_specific: true,
 }
 
+/*
 cc_prebuilt_library_shared {
     name: "libbluetooth_audio_session_aidl",
     owner: "lenovo",
@@ -8753,6 +8754,7 @@ cc_prebuilt_library_shared {
     prefer: true,
     soc_specific: true,
 }
+*/
 
 cc_prebuilt_library_shared {
     name: "libbluetooth_audio_session_aidl_qti",
@@ -24242,7 +24244,7 @@ cc_prebuilt_binary {
             shared_libs: [
                 "libbase",
                 "libbinder_ndk",
-                "android.hardware.thermal-V2-ndk",
+                "android.hardware.thermal-V3-ndk",
                 "libcutils",
                 "libutils",
                 "liblog",
@@ -24255,6 +24257,7 @@ cc_prebuilt_binary {
         },
     },
     compile_multilib: "64",
+    check_elf_files: false,
     strip: {
         none: true,
     },
